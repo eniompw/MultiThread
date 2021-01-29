@@ -1,5 +1,4 @@
 import requests
-import re
 
 f = open("constituents.csv",'r' )
 csv = f.readlines()
