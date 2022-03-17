@@ -15,7 +15,7 @@ def get_div(csvline):
     except Exception as e:
         print(e)
 
-with futures.ThreadPoolExecutor(max_workers=128) as executor:
+with futures.ThreadPoolExecutor(max_workers=4) as executor:
     #https://github.com/datasets/s-and-p-500-companies/blob/master/data/constituents.csv'
     f = open("constituents.csv",'r' )
     csv = f.readlines()
