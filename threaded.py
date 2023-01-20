@@ -6,10 +6,10 @@ def get_div(csvline):
     company = csvline.split(",")
     try:
         req = requests.get('https://www.marketwatch.com/investing/stock/'+company[0],timeout=10)
-        pos = req.text.find("Yield")
+        pos = req.text.find(">Yield<")
         co = []
         co.append(company[0])
-        co.append(req.text[pos+57:pos+62])
+        co.append(req.text[pos+58:pos+62])
         print(co)
         sp500.append(co)
     except Exception as e:
